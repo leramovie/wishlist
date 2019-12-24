@@ -177,15 +177,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="M5C-5f-tbr">
                                 <rect key="frame" x="40" y="84" width="334" height="230.5"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g16-J8-ZUQ">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g16-J8-ZUQ">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1iP-1g-D4M">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1iP-1g-D4M">
                                         <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ef2-cH-Jn8">
                                         <rect key="frame" x="0.0" y="140" width="334" height="50"/>
@@ -220,15 +220,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="g4H-v3-wjJ"/>
                     <connections>
+                        <outlet property="emailTextField" destination="g16-J8-ZUQ" id="R9j-eV-29F"/>
                         <outlet property="errorLabel" destination="A4C-oF-NW5" id="bKC-8w-o1p"/>
-                        <outlet property="firstNameTextField" destination="g16-J8-ZUQ" id="iV3-bM-Ubi"/>
                         <outlet property="loginButton" destination="ef2-cH-Jn8" id="R2v-FB-PUV"/>
                         <outlet property="passwordTextField" destination="1iP-1g-D4M" id="3Kq-Le-Qvr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5UU-pH-HM2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583" y="249"/>
+            <point key="canvasLocation" x="582.60869565217399" y="248.4375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YJt-0J-zwi">
