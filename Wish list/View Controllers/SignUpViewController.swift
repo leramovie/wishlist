@@ -32,13 +32,9 @@ class SignUpViewController: UIViewController {
         errorLabel.alpha = 0
     
         Utilities.styleTextField(firstNameTextfield)
-        
         Utilities.styleTextField(lastNameTextField)
-        
         Utilities.styleTextField(emailTextField)
-        
         Utilities.styleTextField(passwordTextField)
-        
         Utilities.styleFilledButton(signUpButton)
     }
     //Check the fields and validate that the data is correct. If everything is correct, this method returns nil.
@@ -76,10 +72,11 @@ class SignUpViewController: UIViewController {
             let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             
             //Create the user
-            Auth.auth().createUser(withEmail: "", password: "") { (result, err) in
+            Auth.auth().createUser(withEmail: email, password: password) { (result, err) in
                 
                 //Check for errors
                 if err != nil {
+                    
                     //There was an error creating the user
                     self.showError("Error creating user")
                 }
