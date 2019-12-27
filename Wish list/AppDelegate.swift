@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        // Override point for customization after application launch.
+
+        let config = ParseClientConfiguration { (theConfig) in
+            theConfig.applicationId = "com.lera.Wishlist"
+            theConfig.server = "http://wishlistserver.herokuapp.com/parse"
+            theConfig.clientKey = "drunniki"
+            
+        }
+        Parse.initialize(with: config)
+        
         return true
     }
 

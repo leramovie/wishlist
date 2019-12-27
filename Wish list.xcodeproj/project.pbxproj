@@ -20,6 +20,7 @@
 		2B43847B23B0E6BD00C35655 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43847A23B0E6BD00C35655 /* Constants.swift */; };
 		2B6FA9F923B11591000B5382 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B6FA9F823B11590000B5382 /* GoogleService-Info.plist */; };
 		AFA3CE42EB31D7B288231CC6 /* Pods_Wish_list.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7E64EC66F5AFF4F756C533 /* Pods_Wish_list.framework */; };
+		F9BF385C23B4DB1C0023F565 /* im.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F9BF385B23B4DB1C0023F565 /* im.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		79189F446BACC75F9908ACB5 /* Pods-Wish list.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wish list.debug.xcconfig"; path = "Target Support Files/Pods-Wish list/Pods-Wish list.debug.xcconfig"; sourceTree = "<group>"; };
 		7B7E64EC66F5AFF4F756C533 /* Pods_Wish_list.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wish_list.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999C3946AC72D1C91052A3F0 /* Pods-Wish list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wish list.release.xcconfig"; path = "Target Support Files/Pods-Wish list/Pods-Wish list.release.xcconfig"; sourceTree = "<group>"; };
+		F9BF385B23B4DB1C0023F565 /* im.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = im.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,15 +77,15 @@
 		2B37301A23ABAD36000EFC00 /* Wish list */ = {
 			isa = PBXGroup;
 			children = (
+				F9BF385B23B4DB1C0023F565 /* im.mp4 */,
+				2B37303523ABAE82000EFC00 /* View Controllers */,
 				2B37303623ABCBCC000EFC00 /* Helpers */,
+				F9BF385423B4D1C00023F565 /* Storyboards */,
 				2B37301B23ABAD36000EFC00 /* AppDelegate.swift */,
 				2B37301D23ABAD36000EFC00 /* SceneDelegate.swift */,
-				2B37302123ABAD36000EFC00 /* Main.storyboard */,
 				2B37302423ABAD3B000EFC00 /* Assets.xcassets */,
-				2B37302623ABAD3B000EFC00 /* LaunchScreen.storyboard */,
 				2B6FA9F823B11590000B5382 /* GoogleService-Info.plist */,
 				2B37302923ABAD3B000EFC00 /* Info.plist */,
-				2B37303523ABAE82000EFC00 /* View Controllers */,
 			);
 			path = "Wish list";
 			sourceTree = "<group>";
@@ -123,6 +125,15 @@
 				7B7E64EC66F5AFF4F756C533 /* Pods_Wish_list.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9BF385423B4D1C00023F565 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2B37302123ABAD36000EFC00 /* Main.storyboard */,
+				2B37302623ABAD3B000EFC00 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,6 +199,7 @@
 				2B37302823ABAD3B000EFC00 /* LaunchScreen.storyboard in Resources */,
 				2B6FA9F923B11591000B5382 /* GoogleService-Info.plist in Resources */,
 				2B37302523ABAD3B000EFC00 /* Assets.xcassets in Resources */,
+				F9BF385C23B4DB1C0023F565 /* im.mp4 in Resources */,
 				2B37302323ABAD36000EFC00 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +408,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489JK8PZ4S;
 				INFOPLIST_FILE = "Wish list/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -403,7 +416,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lera.Wishlist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -415,6 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 489JK8PZ4S;
 				INFOPLIST_FILE = "Wish list/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,7 +436,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.lera.Wishlist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
