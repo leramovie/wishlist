@@ -1,0 +1,10 @@
+{
+ "apps": [
+  {
+   "serverURL": "http://local:1337/parse",
+   "appId": "com.lera.Wishlist",
+   "masterKey": "drunniki",
+   "appName": "Wishlist"
+  }
+ ]
+}

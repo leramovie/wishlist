@@ -20,11 +20,13 @@
 		2B43847B23B0E6BD00C35655 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B43847A23B0E6BD00C35655 /* Constants.swift */; };
 		2B6FA9F923B11591000B5382 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2B6FA9F823B11590000B5382 /* GoogleService-Info.plist */; };
 		AFA3CE42EB31D7B288231CC6 /* Pods_Wish_list.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7E64EC66F5AFF4F756C533 /* Pods_Wish_list.framework */; };
+		F998B64023C4A12900A00266 /* MyWishTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998B63F23C4A12900A00266 /* MyWishTableViewController.swift */; };
+		F998B64223C4A1A900A00266 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F998B64123C4A1A900A00266 /* Model.swift */; };
 		F9BF385C23B4DB1C0023F565 /* im.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F9BF385B23B4DB1C0023F565 /* im.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B37301823ABAD36000EFC00 /* Wish list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wish list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B37301823ABAD36000EFC00 /* Wishlist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wishlist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B37301B23ABAD36000EFC00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B37301D23ABAD36000EFC00 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2B37301F23ABAD36000EFC00 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,8 @@
 		79189F446BACC75F9908ACB5 /* Pods-Wish list.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wish list.debug.xcconfig"; path = "Target Support Files/Pods-Wish list/Pods-Wish list.debug.xcconfig"; sourceTree = "<group>"; };
 		7B7E64EC66F5AFF4F756C533 /* Pods_Wish_list.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wish_list.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999C3946AC72D1C91052A3F0 /* Pods-Wish list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wish list.release.xcconfig"; path = "Target Support Files/Pods-Wish list/Pods-Wish list.release.xcconfig"; sourceTree = "<group>"; };
+		F998B63F23C4A12900A00266 /* MyWishTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWishTableViewController.swift; sourceTree = "<group>"; };
+		F998B64123C4A1A900A00266 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F9BF385B23B4DB1C0023F565 /* im.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = im.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,7 +73,7 @@
 		2B37301923ABAD36000EFC00 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B37301823ABAD36000EFC00 /* Wish list.app */,
+				2B37301823ABAD36000EFC00 /* Wishlist.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,6 +85,7 @@
 				2B37303523ABAE82000EFC00 /* View Controllers */,
 				2B37303623ABCBCC000EFC00 /* Helpers */,
 				F9BF385423B4D1C00023F565 /* Storyboards */,
+				F998B64323C4A1B500A00266 /* Model */,
 				2B37301B23ABAD36000EFC00 /* AppDelegate.swift */,
 				2B37301D23ABAD36000EFC00 /* SceneDelegate.swift */,
 				2B37302423ABAD3B000EFC00 /* Assets.xcassets */,
@@ -97,6 +102,7 @@
 				2B37302F23ABAE3F000EFC00 /* SignUpViewController.swift */,
 				2B37303123ABAE55000EFC00 /* LoginViewController.swift */,
 				2B37303323ABAE6A000EFC00 /* HomeViewController.swift */,
+				F998B63F23C4A12900A00266 /* MyWishTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -127,6 +133,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F998B64323C4A1B500A00266 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F998B64123C4A1A900A00266 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F9BF385423B4D1C00023F565 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +169,7 @@
 			);
 			name = "Wish list";
 			productName = "Wish list";
-			productReference = 2B37301823ABAD36000EFC00 /* Wish list.app */;
+			productReference = 2B37301823ABAD36000EFC00 /* Wishlist.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -256,7 +270,9 @@
 				2B37302023ABAD36000EFC00 /* ViewController.swift in Sources */,
 				2B37301C23ABAD36000EFC00 /* AppDelegate.swift in Sources */,
 				2B37303823ABCC1A000EFC00 /* Utilities.swift in Sources */,
+				F998B64023C4A12900A00266 /* MyWishTableViewController.swift in Sources */,
 				2B37303023ABAE3F000EFC00 /* SignUpViewController.swift in Sources */,
+				F998B64223C4A1A900A00266 /* Model.swift in Sources */,
 				2B37303223ABAE55000EFC00 /* LoginViewController.swift in Sources */,
 				2B37301E23ABAD36000EFC00 /* SceneDelegate.swift in Sources */,
 				2B37303423ABAE6A000EFC00 /* HomeViewController.swift in Sources */,
@@ -414,7 +430,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lera.Wishlist;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wishlist;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -434,7 +450,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lera.Wishlist;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wishlist;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

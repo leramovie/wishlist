@@ -19,12 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
 
         let config = ParseClientConfiguration { (theConfig) in
-            theConfig.applicationId = "com.lera.Wishlist"
+            theConfig.applicationId = "lerawishlist"
             theConfig.server = "http://wishlistserver.herokuapp.com/parse"
             theConfig.clientKey = "drunniki"
             
         }
+        
         Parse.initialize(with: config)
+        
+        // parse-dashboard --appId lerawishlist --masterKey drunniki --serverURL "http://whishlistserver.herokuapp.com/parse"
         
         return true
     }

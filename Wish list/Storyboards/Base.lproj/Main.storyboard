@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="k5s-h2-9o4">
             <objects>
-                <viewController id="oRk-hb-NL5" customClass="ViewController" customModule="Wish_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oRk-hb-NL5" customClass="ViewController" customModule="Wishlist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V3F-ne-hX8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="rVr-4X-opl">
             <objects>
-                <viewController id="Ygk-He-M3v" customClass="SignUpViewController" customModule="Wish_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ygk-He-M3v" customClass="SignUpViewController" customModule="Wishlist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="spC-PF-Nmx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,7 +141,7 @@
         <!--Home View Controller-->
         <scene sceneID="4mt-Vy-9Uk">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="X7B-LX-onp" customClass="HomeViewController" customModule="Wish_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="X7B-LX-onp" customClass="HomeViewController" customModule="Wishlist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Hc-80-UMn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,6 +152,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFz-Ls-34A">
+                                <rect key="frame" x="74" y="578" width="265" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="My wishlist">
+                                    <color key="titleColor" red="1" green="0.95265943740000003" blue="0.89035092490000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ztw-Vt-9cV" kind="show" id="Z7A-0m-zip"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -163,12 +174,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVl-RC-l62" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1413" y="-118"/>
+            <point key="canvasLocation" x="1410.144927536232" y="-118.52678571428571"/>
+        </scene>
+        <!--My Wish Table View Controller-->
+        <scene sceneID="EXX-O4-KBR">
+            <objects>
+                <tableViewController id="hfB-ax-z0D" customClass="MyWishTableViewController" customModule="Wishlist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mvP-el-cZW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="Cell" id="dDa-we-AO8">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dDa-we-AO8" id="tjg-YA-Rtb">
+                                    <rect key="frame" x="0.0" y="0.0" width="370" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hfB-ax-z0D" id="ZZf-F5-gWr"/>
+                            <outlet property="delegate" destination="hfB-ax-z0D" id="gBo-T2-f6V"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="sEh-8y-e7U">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HQH-3X-YvW">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="pushAddWish:" destination="hfB-ax-z0D" id="Ipp-y6-Naf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5LO-eQ-akF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3352.1739130434785" y="-78.348214285714278"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="5sP-rG-Fpd">
             <objects>
-                <viewController id="iq7-bd-YzM" customClass="LoginViewController" customModule="Wish_list" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iq7-bd-YzM" customClass="LoginViewController" customModule="Wishlist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1JC-xx-0bz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -196,7 +243,7 @@
                                             <action selector="loginTapped:" destination="iq7-bd-YzM" eventType="touchUpInside" id="KQM-KS-45X"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oh sh*t!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4C-oF-NW5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oh sh*t!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4C-oF-NW5">
                                         <rect key="frame" x="0.0" y="210" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -245,6 +292,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UX6-pA-kYS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1094.2028985507247" y="-103.125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LfQ-La-PRG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ztw-Vt-9cV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="AR4-KO-eGN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ofh-iG-kGj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hfB-ax-z0D" kind="relationship" relationship="rootViewController" id="6v7-eH-J64"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hyB-w9-OKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2442.0289855072465" y="-78.348214285714278"/>
         </scene>
     </scenes>
 </document>
