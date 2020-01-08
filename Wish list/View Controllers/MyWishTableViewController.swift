@@ -38,9 +38,9 @@ class MyWishTableViewController: UITableViewController {
         // Configure the cell...
 
         if (currentItem["isCompleted"] as? Bool) == true {
-            cell.accessoryType = .checkmark
+            cell.imageView?.image = #imageLiteral(resourceName: "check")
         } else {
-            cell.accessoryType = .none
+            cell.imageView?.image = #imageLiteral(resourceName: "uncheck")
         }
         return cell
     }
@@ -69,19 +69,20 @@ class MyWishTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if changeState (at: indexPath.row) {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+            tableView.cellForRow(at: indexPath)?.imageView?.image = #imageLiteral(resourceName: "check")
         } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            tableView.cellForRow(at: indexPath)?.imageView?.image = #imageLiteral(resourceName: "uncheck")
         }
     }
     
     
-    /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+        
+        moveItem(fromIndex: fromIndexPath.row, toIndex: to.row)
+        
+        tableView.reloadData()
     }
-    */
 
     /*
     // Override to support conditional rearranging of the table view.
@@ -101,14 +102,30 @@ class MyWishTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func pushEditAction(_ sender: Any) {
+        tableView.setEditing(!tableView.isEditing, animated: true)
+    }
     
     @IBAction func pushAddWish(_ sender: Any) {
-        let alertController = UIAlertController(title: "Add your wish", message: "Some Message", preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "title", style: .default)
-            {(alert) in
-            
+        let alertController = UIAlertController(title: "Add your wish", message: nil, preferredStyle: .alert)
+ 
+        alertController.addTextField { (textField) in
+            textField.placeholder = "New wish"
         }
-        alertController.addAction(alertAction)
+        
+        let alertAction1 = UIAlertAction(title: "Cancel", style: .default)
+            {(alert) in
+        }
+        let alertAction2 = UIAlertAction(title: "Create", style: .cancel)
+            {(alert) in
+                let newItem = alertController.textFields![0].text
+                addItem(nameItem: newItem!)
+                self.tableView.reloadData()
+        }
+        
+        alertController.addAction(alertAction1)
+        alertController.addAction(alertAction2)
+
         present(alertController, animated: true, completion: nil)
 
     }

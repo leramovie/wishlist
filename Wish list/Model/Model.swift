@@ -28,6 +28,12 @@ func addItem(nameItem: String, isCompleted: Bool = false) {
     MyWishListDefault.append(["Name": nameItem, "isCompleted": isCompleted])
 }
 
+func moveItem(fromIndex: Int, toIndex: Int) {
+    let from = MyWishListDefault[fromIndex]
+    MyWishListDefault.remove(at: fromIndex)
+    MyWishListDefault.insert(from, at: toIndex)
+}
+
 func removeItem(at index: Int) {
     MyWishListDefault.remove(at: index)
 
@@ -38,3 +44,4 @@ func changeState(at item: Int) -> Bool {
     
     return MyWishListDefault[item]["isCompleted"] as! Bool
 }
+
