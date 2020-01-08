@@ -37,6 +37,11 @@ class MyWishTableViewController: UITableViewController {
         cell.textLabel?.text = currentItem["Name"] as! String
         // Configure the cell...
 
+        if (currentItem["isCompleted"] as? Bool) == true {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
     }
 
@@ -59,6 +64,18 @@ class MyWishTableViewController: UITableViewController {
         }    
     }
 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if changeState (at: indexPath.row) {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        } else {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        }
+    }
+    
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -86,8 +103,14 @@ class MyWishTableViewController: UITableViewController {
 
     
     @IBAction func pushAddWish(_ sender: Any) {
-        addItem(nameItem: "I want ...")
-        tableView.reloadData()
+        let alertController = UIAlertController(title: "Add your wish", message: "Some Message", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "title", style: .default)
+            {(alert) in
+            
+        }
+        alertController.addAction(alertAction)
+        present(alertController, animated: true, completion: nil)
+
     }
     
 }

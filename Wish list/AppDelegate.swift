@@ -18,12 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
 
+        
         let config = ParseClientConfiguration { (theConfig) in
             theConfig.applicationId = "lerawishlist"
             theConfig.server = "http://wishlistserver.herokuapp.com/parse"
             theConfig.clientKey = "drunniki"
             
         }
+        
         
         Parse.initialize(with: config)
         

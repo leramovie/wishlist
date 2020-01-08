@@ -200,6 +200,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="sEh-8y-e7U">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6Sz-3D-eq9">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HQH-3X-YvW">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>

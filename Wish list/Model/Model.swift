@@ -8,23 +8,33 @@
 
 import Foundation
 
-var MyWishListDefault: [[String: Any]] = [["Name": "New Book", "isCompleted": false], ["Name": "Watches", "isCompleted": false]]
+var MyWishListDefault: [[String: Any]] {
+    set{
+        UserDefaults.standard.set(newValue, forKey: "WishListDataKey")
+        UserDefaults.standard.synchronize()
+    }
+    
+    get{
+        if let array = UserDefaults.standard.array(forKey: "WishListDataKey") as? [[String: Any]] {
+            return array
+        } else {
+            return []
+        }
+        return []
+    }
+}
 
 func addItem(nameItem: String, isCompleted: Bool = false) {
     MyWishListDefault.append(["Name": nameItem, "isCompleted": isCompleted])
-    saveData()
 }
 
 func removeItem(at index: Int) {
     MyWishListDefault.remove(at: index)
-    saveData()
 
 }
 
-func saveData() {
+func changeState(at item: Int) -> Bool {
+    MyWishListDefault[item]["isCompleted"] = !(MyWishListDefault[item]["isCompleted"] as! Bool)
     
-}
-
-func loadData() {
-    
+    return MyWishListDefault[item]["isCompleted"] as! Bool
 }
