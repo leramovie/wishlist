@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let config = ParseClientConfiguration { (theConfig) in
             theConfig.applicationId = "lerawishlist"
             theConfig.server = "http://wishlistserver.herokuapp.com/parse"
-            theConfig.clientKey = "drunniki"
             
         }
         
