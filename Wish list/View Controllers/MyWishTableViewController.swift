@@ -42,6 +42,15 @@ class MyWishTableViewController: UITableViewController {
         } else {
             cell.imageView?.image = #imageLiteral(resourceName: "uncheck")
         }
+        
+        if tableView.isEditing {
+            cell.textLabel?.alpha = 0.4
+            cell.imageView?.alpha = 0.4
+        } else {
+            cell.textLabel?.alpha = 1
+            cell.imageView?.alpha = 1
+            
+        }
         return cell
     }
 
@@ -53,7 +62,6 @@ class MyWishTableViewController: UITableViewController {
     }
  
 
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
@@ -61,9 +69,21 @@ class MyWishTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        if tableView.isEditing {
+            return .none
+        } else {
+            return .delete
+        }
+        
     }
 
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool{
+        return false
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -104,6 +124,10 @@ class MyWishTableViewController: UITableViewController {
 
     @IBAction func pushEditAction(_ sender: Any) {
         tableView.setEditing(!tableView.isEditing, animated: true)
+        //Выполлнить блок кода в основном потоке приложения через сейчас + 0.3 сек
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.tableView.reloadData()
+        }
     }
     
     @IBAction func pushAddWish(_ sender: Any) {
