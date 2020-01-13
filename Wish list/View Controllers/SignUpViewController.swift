@@ -18,8 +18,10 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var cancelBar: UIBarButtonItem!
+    
 
-
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,4 +113,10 @@ class SignUpViewController: UIViewController {
         view.window?.rootViewController = homeViewController
         view.window?.makeKeyAndVisible()
     }
+    
+    
+    
+    @IBAction func pushCancel(_ sender: Any) {
+          navigationController?.popViewController(animated: true)
+      }
 }

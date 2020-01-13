@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class MyWishTableViewController: UITableViewController {
  
@@ -14,6 +15,13 @@ class MyWishTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let ref = Database.database().reference()
+        
+        ref.childByAutoId().setValue(["private":"true", "status":"true", "text":"I want to fly", "user":"lera"])
+        
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = UIColor.black
 
     }
 

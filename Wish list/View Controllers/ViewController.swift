@@ -21,13 +21,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let testObject = PFObject(className: "Testing")
-//        testObject["foo"] = "bar"
-//        testObject.saveInBackground { (success, error) in
-//            print("object has been saved")
-//        }
-        
+            
         
         setUpElements()
     }

@@ -19,6 +19,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    
+    @IBOutlet weak var cancelBar: UIBarButtonItem!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,6 +64,9 @@ class LoginViewController: UIViewController {
         }
         
         
+    @IBAction func pushCancel(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
+}
 
 
