@@ -12,9 +12,10 @@ import FirebaseDatabase
 class MyWishTableViewController: UITableViewController {
  
     
-    @IBAction func backBar(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
+    @IBAction func pushCancel(_ sender: Any) {
+           navigationController?.popViewController(animated: true)
+       }
+
     
     
     override func viewDidLoad() {
@@ -165,5 +166,7 @@ class MyWishTableViewController: UITableViewController {
         present(alertController, animated: true, completion: nil)
 
     }
+    
+   
     
 }
